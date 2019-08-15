@@ -34,12 +34,13 @@ public class BookServiceImpl implements BookService {
 	}
 	
 	@Transactional
-	public Book updateBook(long id,Book book) {
-		return dao.updateBook(id,book);
+	public void updateBook(long id , Book book) {
+		 dao.updateBook(id,book);
 	}
-
+	
+	@Transactional
 	public void deleteBook(long id) {
-
+		dao.deleteBook(id);
 	}
 
 }

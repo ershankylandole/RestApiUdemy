@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="Book")
+@Entity
+@Table(name="book")
 public class Book {
 
 	@Id
@@ -38,7 +40,9 @@ public class Book {
 	}
 	
 	  public Book(long id, String title, String author) { super(); this.id = id;
-	  this.title = title; this.author = author; } public Book() { }
+	  this.title = title; this.author = author; } 
+	  
+	  public Book() { }
 	 
 	
 	

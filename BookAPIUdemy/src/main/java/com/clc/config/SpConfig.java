@@ -69,6 +69,7 @@ public class SpConfig {
 		lsfb.setHibernateProperties(gethibernateProperties());
 		return lsfb;
 	}
+	
 
 	private Properties gethibernateProperties() {
 		Properties prop = new Properties();
@@ -76,7 +77,7 @@ public class SpConfig {
 		prop.put(Environment.SHOW_SQL,SQL_SHOW);
 		//prop.put("hbm2ddl.auto","create");
 		prop.put(Environment.HBM2DDL_AUTO, SQL_CREATE_TABLE);
-		//prop.put(Environment.FORMAT_SQL,SQL_FORMAT);
+		prop.put(Environment.FORMAT_SQL,SQL_FORMAT);
 		return prop;
 	}
 	

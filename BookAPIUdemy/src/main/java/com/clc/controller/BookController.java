@@ -36,16 +36,18 @@ public class BookController {
 		 return "Book Successfully added ";
 	}
 	
-	@RequestMapping(value="/{id}" , method = RequestMethod.PUT)
-	public Book update(@PathVariable long id , @RequestBody Book book) {
-		
-		/*
-		 * Book oldBook = getSingleBook(id); oldBook.setTitle(book.getTitle());
-		 * oldBook.setAuthor(book.getAuthor());
-		 */
-		return service.updateBook(id,book);
-		 
+	@RequestMapping(value = "/{id}" , method = RequestMethod.PUT)
+	public String updateBook(@PathVariable("id") long id , @RequestBody Book book) {
+		//Book oldBook = service.bookById(id);
+		System.out.println("update");
+		service.updateBook(id,book);
+		return "Successfully updated";
 	}
 	
-
+	@RequestMapping(value = "/{id}" , method = RequestMethod.DELETE)
+	public String deleteBook(@PathVariable("id") long id) {
+		service.deleteBook(id);
+		return "Book has been successfully deleted";
+		
+	}
 }
